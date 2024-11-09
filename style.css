@@ -1,0 +1,61 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Container Styling for Flexbox Layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px; /* Add some space between iframe items */
+    padding: 20px;
+    max-width: 1200px; /* Max width of the container */
+    width: 100%;
+}
+
+/* Styling for each iframe item */
+.iframe-item {
+    flex: 1 1 300px; /* Flexbox shorthand (grow, shrink, basis) */
+    min-width: 250px;  /* Ensure items are not smaller than 250px */
+    max-width: 500px;  /* Limit max width of iframe items */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(18, 164, 96, 0.1);
+}
+
+/* Styling for the iframe itself */
+iframe {
+    width: 100%;
+    height: 250px;  
+    border: none;   
+    border-radius: 8px;
+}
+
+/* Responsive layout: Stack items on smaller screens */
+@media screen and (max-width: 768px) {
+    .container {
+        justify-content: center;
+    }
+
+    .iframe-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    iframe {
+        height: 200px; /* Adjust iframe height for smaller screens */
+    }
+}
